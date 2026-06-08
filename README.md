@@ -3,7 +3,7 @@
 An intelligent multi-agent system that automates procurement document auditing, contract risk assessment, and compliance verification.
 
 ## 🚀 Live Demo
-**Access the live API**: [Your Deployment URL from logs]
+**Access the live API**: https://procurement-auditor-ai-v1-ee5a99a7-bd10-467-b8697239.crewai.com
 
 ## 🤖 Agents in This Crew
 

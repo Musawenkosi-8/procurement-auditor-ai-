@@ -41,3 +41,18 @@ echo "OPENAI_API_KEY=your_key_here" > .env
 
 # Run the crew
 crewai run
+
+## 🚀 Live API
+
+**Endpoint**: `https://procurement-auditor-ai-v1-e.crewai.com`
+
+**Status**: ✅ Online
+
+**Authentication**: Bearer Token required
+
+**Try it**:
+\`\`\`bash
+curl -X POST https://procurement-auditor-ai-v1-e.crewai.com/inputs \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -d '{"contract_text": "Your procurement contract here"}'
+\`\`\`

@@ -2,6 +2,17 @@
 
 AI-powered multi-agent procurement auditing system that automatically validates invoices, detects pricing anomalies, identifies compliance violations, and generates audit reports.
 
+## 🚀 Deployment Status
+
+- ✅ API deployed successfully on CrewAI Cloud
+- 🟢 Service status: LIVE
+- 🧪 End-to-end application testing: PASSED
+-  url: https://procurement-auditor-ai-v1-ee5a99a7-bd10-467-b8697239.crewai.com
+
+## 📡 Production Notes
+
+The system has been deployed and validated in a live environment using CrewAI infrastructure. All core workflows have been tested successfully, including API request handling, response generation, and end-user interaction flows.
+
 Built using CrewAI, OpenAI GPT-4o, and Python.
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)

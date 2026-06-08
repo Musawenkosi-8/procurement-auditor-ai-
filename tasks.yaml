@@ -1,0 +1,48 @@
+---
+process_invoice_documents:
+  description: Extract and process invoice data from the uploaded documents located
+    at {invoice_file_path}. Parse all critical information including vendor details,
+    invoice numbers, amounts, dates, line items, tax information, and payment terms.
+    Convert the extracted data into a structured format for downstream analysis.
+  expected_output: A detailed structured data summary containing all extracted invoice
+    information in JSON format, including vendor details, financial amounts, dates,
+    line items, and any identified discrepancies or extraction challenges.
+  agent: invoice_processing_specialist
+compliance_verification:
+  description: Review the processed invoice data against {organization_type} procurement
+    policies and regulations. Check for policy violations including unauthorized vendors,
+    exceeding approval limits, missing purchase orders, proper authorization signatures,
+    and compliance with regulatory requirements. Verify against approved vendor lists
+    and procurement procedures.
+  expected_output: A comprehensive compliance report detailing all policy violations
+    found, regulatory compliance status, missing documentation, unauthorized transactions,
+    and specific recommendations for addressing each compliance issue.
+  agent: compliance_auditor
+  context:
+  - process_invoice_documents
+risk_assessment_analysis:
+  description: Analyze the processed invoice data to identify potential fraud indicators,
+    duplicate payments, vendor risks, and anomalous spending patterns. Evaluate pricing
+    anomalies, unusual vendor relationships, payment timing irregularities, and statistical
+    outliers. Assign risk scores to flagged transactions and prioritize them for investigation.
+  expected_output: A detailed risk assessment report with categorized risk findings,
+    fraud indicators, duplicate payment analysis, vendor risk profiles, anomaly detection
+    results, and prioritized list of high-risk transactions requiring immediate attention.
+  agent: risk_assessment_analyst
+  async_execution: true
+  context:
+  - process_invoice_documents
+generate_comprehensive_audit_report:
+  description: Compile all findings from invoice processing, compliance verification,
+    and risk assessment into a comprehensive procurement audit report. Create executive
+    summary, detailed findings sections, risk prioritization, compliance status, and
+    actionable recommendations. Tailor the report format for {organization_type} stakeholders
+    and regulatory requirements.
+  expected_output: A comprehensive procurement audit report in markdown format with
+    executive summary, detailed findings, compliance assessment, risk analysis, financial
+    impact assessment, and prioritized recommendations for improving procurement processes
+    and reducing fraud risk.
+  agent: audit_report_generator
+  context:
+  - compliance_verification
+  - risk_assessment_analysis
